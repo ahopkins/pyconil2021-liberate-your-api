@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PyCon IL 2021 - Adam Hopkins</title>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/quasar.min.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/pure-min.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/spaces.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/typo.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/devices.min.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/gh-fork-ribbon.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/nord-dark.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/nord-light.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/font-nord.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bg-nord.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/font-open-color.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bg-open-color.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/material-icons.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/abs-layout.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/border-layout.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/text-rect.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/text-circle.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/card.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/lines.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/filters.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/remixicon.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/override.css" />
+
+	<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<textarea id="source">
+__SLIDES__
+	</textarea>
+
+	<script src="/assets/js/remark.min.js"></script>
+	<script src="/assets/js/vue.js"></script>
+	<script src="/assets/js/quasar.umd.min.js"></script>
+	<script src="/assets/js/mermaid.min.js"></script>
+	<script id="MathJax-script" async src="/js/tex-mml-chtml.js"></script>
+	<script>
+		// 预处理：去掉每行开头的空格，否则超过2层锁紧的类会导致解析出BUG
+		var targetTextArea = document.getElementById("source");
+		var targetText = targetTextArea.innerHTML.replace(
+			/```[^`]+```/gm,
+			(match, index, input) => {
+				return match.replace(/[ ]/gm, "\u3000");
+			}
+		);
+		var lines = targetText.split("\n");
+
+		targetTextArea.innerHTML = lines
+			.map((line) => line.replace(/^(?![ ]+[\-|0-9])[ ]+/, ""))
+			.map((line) => line.replace(/\u3000/g, " "))
+			.join("\n");
+
+		var slideshow = remark.create({
+			ratio: "4:3", // window ratio
+			// arta, ascetic, dark, default, far, github, googlecode, idea,
+			// ir-black, magula, monokai, rainbow, solarized-dark, solarized-light,
+			// sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright,
+			// tomorrow-night, tomorrow-night-eighties, vs, zenburn.
+			highlightStyle: "tomorrow-night-bright",
+			highlightLines: true,
+			countIncrementalSlides: false, // whether the incremental content count as one page
+			//slideNumberFormat: "", // If this parameter is set to "", the page number is not displayed
+			navigation: {
+				scroll: true, // Page turning with mouse wheel is allowed
+				touch: true, // Is it allowed to scroll back and forth by clicking on the left or right side of the screen
+				click: false, // Allow the mouse to click on the left or right side of the screen to turn back and forth
+			},
+		});
+
+		// 初始化 VUE
+		for (var el of document.querySelectorAll(".vue")) {
+			new Vue({
+				el: el,
+			});
+		}
+
+		// 初始化可点击预览的卡片
+		var preview_win_cards = document.querySelectorAll(".preview-win");
+		for (var card of preview_win_cards) {
+			((clickedCard) => {
+				clickedCard.addEventListener("click", (e) => {
+					var img = clickedCard.querySelector("img");
+					if (img) {
+						window.open(img.src);
+					}
+				});
+			})(card);
+		}
+
+		// 背景色变化兼容 F11 全屏
+		function isFullScreen() {
+			return (
+				window.fullScreen ||
+				(window.innerWidth == screen.width &&
+					window.innerHeight == screen.height)
+			);
+		}
+
+		window.addEventListener("resize", () => {
+			if (isFullScreen()) {
+				document.body.style["background-color"] = "#000";
+			} else {
+				document.body.style["background-color"] = "#d7d8d2";
+			}
+		});
+
+		// 初始化 mermaid
+		mermaid.mermaidAPI.initialize({
+			startOnLoad: false,
+			theme: "forest",
+			themeCSS: ".tick>text { font-size:26px; }  .taskTextOutsideRight,.taskTextOutsideLeft { font-size:20px; } .titleText {font-size:30px;} .sectionTitle {font-size:20px;}",
+			gantt: {
+				fontSize: 26,
+				barHeight: 30,
+				useMaxWidth: false,
+			},
+		});
+
+		var mermaidCmps = document.querySelectorAll(".mermaid");
+		for (var i = 0; i < mermaidCmps.length; i++) {
+			var mermaidCmp = mermaidCmps[i];
+			var insertSvg = function (svgCode, bindFunctions) {
+				mermaidCmp.innerHTML = svgCode;
+			};
+
+			var graphDefinition = "";
+			let pCmps = mermaidCmp.querySelectorAll("pre");
+			for (var pCmp of pCmps) {
+				graphDefinition += pCmp.textContent.replace(/\\n/g, "<br/>");
+			}
+
+			var graph = mermaid.mermaidAPI.render(
+				"graphDiv" + i,
+				graphDefinition,
+				insertSvg
+			);
+		}
+	</script>
+</body>
+
+</html>

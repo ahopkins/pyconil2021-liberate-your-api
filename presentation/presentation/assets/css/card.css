@@ -1,0 +1,695 @@
+@import "./open-color.css";
+
+/*
+ * 卡片
+*/
+.card {
+  padding: 0px;
+  border: 1px solid var(--oc-gray-4);
+  border-radius: 4px;
+  margin: 0.3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.card .section.right,
+.card .section.right > div,
+.card .section.right > div > p,
+.card .section.right > p,
+.card .section.right > p > span,
+.card .section.right > span,
+.card .section.right > strong {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.card.noborder {
+  border: 0px;
+}
+
+.card.noround {
+  border-radius: 0px;
+}
+
+.card > p {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.card p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.card .section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px 12px;
+  margin: 0px;
+  width: 100%;
+}
+
+.card .section > div,
+.card .section > span,
+.card .section > p,
+.card .section > p > span,
+.card .section > strong {
+  display: flex !important;
+  flex-wrap: wrap;
+  padding: 0px;
+  line-height: 1.5em;
+  width: 100%;
+  margin: 0px;
+  align-items: baseline;
+}
+
+.card .section .remark-inline-code {
+  line-height: 1.5em;
+}
+
+.card .img {
+  display: flex;
+  width: 100%;
+}
+
+.card .img > img {
+  width: 100%;
+  /* 修正微信浏览器、UC浏览器Flex布局时高度拉伸问题 */
+  align-self: center;
+}
+
+.card .hline {
+  border-top: 1px solid var(--oc-gray-4);
+  margin-top: 16px !important;
+  margin-bottom: 12px !important;
+}
+
+/* 所有分两栏 */
+.card.book > .section,
+.card.book > .img,
+.card.book > p {
+  flex-basis: 50%;
+  margin: 0px;
+}
+
+/* 色彩 */
+.card.gray {
+  border-color: var(--oc-gray-7);
+  background-color: var(--oc-gray-3);
+}
+.card.red {
+  border-color: var(--oc-red-7);
+  background-color: var(--oc-red-3);
+}
+.card.pink {
+  border-color: var(--oc-pink-7);
+  background-color: var(--oc-pink-3);
+}
+.card.grape {
+  border-color: var(--oc-grape-7);
+  background-color: var(--oc-grape-3);
+}
+.card.violet {
+  border-color: var(--oc-violet-7);
+  background-color: var(--oc-violet-3);
+}
+.card.indigo {
+  border-color: var(--oc-indigo-7);
+  background-color: var(--oc-indigo-3);
+}
+.card.blue {
+  border-color: var(--oc-blue-7);
+  background-color: var(--oc-blue-3);
+}
+.card.cyan {
+  border-color: var(--oc-cyan-7);
+  background-color: var(--oc-cyan-3);
+}
+.card.teal {
+  border-color: var(--oc-teal-7);
+  background-color: var(--oc-teal-3);
+}
+.card.green {
+  border-color: var(--oc-green-7);
+  background-color: var(--oc-green-3);
+}
+.card.lime {
+  border-color: var(--oc-lime-7);
+  background-color: var(--oc-lime-3);
+}
+.card.yellow {
+  border-color: var(--oc-yellow-7);
+  background-color: var(--oc-yellow-3);
+}
+.card.orange {
+  border-color: var(--oc-orange-7);
+  background-color: var(--oc-orange-3);
+}
+
+.card.dark.gray {
+  background-color: var(--oc-gray-6);
+  border-color: var(--oc-gray-9);
+}
+.card.dark.red {
+  background-color: var(--oc-red-6);
+  border-color: var(--oc-red-9);
+}
+.card.dark.pink {
+  background-color: var(--oc-pink-6);
+  border-color: var(--oc-pink-9);
+}
+.card.dark.grape {
+  background-color: var(--oc-grape-6);
+  border-color: var(--oc-grape-9);
+}
+.card.dark.violet {
+  background-color: var(--oc-violet-6);
+  border-color: var(--oc-violet-9);
+}
+.card.dark.indigo {
+  background-color: var(--oc-indigo-6);
+  border-color: var(--oc-indigo-9);
+}
+.card.dark.blue {
+  background-color: var(--oc-blue-6);
+  border-color: var(--oc-blue-9);
+}
+.card.dark.cyan {
+  background-color: var(--oc-cyan-6);
+  border-color: var(--oc-cyan-9);
+}
+.card.dark.teal {
+  background-color: var(--oc-teal-6);
+  border-color: var(--oc-teal-9);
+}
+.card.dark.green {
+  background-color: var(--oc-green-6);
+  border-color: var(--oc-green-9);
+}
+.card.dark.lime {
+  background-color: var(--oc-lime-6);
+  border-color: var(--oc-lime-9);
+}
+.card.dark.yellow {
+  background-color: var(--oc-yellow-6);
+  border-color: var(--oc-yellow-9);
+}
+.card.dark.orange {
+  background-color: var(--oc-orange-6);
+  border-color: var(--oc-orange-9);
+}
+
+.card.black,
+.card.black h1,
+.card.black h2,
+.card.black h3,
+.card.black h4,
+.card.black h5,
+.card.black h6,
+.card.black p,
+.card.black span,
+.card.black strong,
+.card.black i {
+  color: var(--oc-gray-1);
+  background-color: #000;
+  border-color: #000;
+}
+
+.card.white,
+.card.white h1,
+.card.white h2,
+.card.white h3,
+.card.white h4,
+.card.white h5,
+.card.white h6,
+.card.white p,
+.card.white span,
+.card.white strong,
+.card.white i {
+  color: var(--oc-gray-9) !important;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.card.gradient.gray {
+  background: radial-gradient(circle, var(--oc-gray-3) -9%, var(--oc-gray-9) 90%);
+  border-color: var(--oc-gray-9);
+}
+.card.gradient.red {
+  background: radial-gradient(circle, var(--oc-red-3) -9%, var(--oc-red-9) 90%);
+  border-color: var(--oc-red-9);
+}
+.card.gradient.pink {
+  background: radial-gradient(circle, var(--oc-pink-3) -9%, var(--oc-pink-9) 90%);
+  border-color: var(--oc-pink-9);
+}
+.card.gradient.grape {
+  background: radial-gradient(circle, var(--oc-grape-3) -9%, var(--oc-grape-9) 90%);
+  border-color: var(--oc-grape-9);
+}
+.card.gradient.violet {
+  background: radial-gradient(circle, var(--oc-violet-3) -9%, var(--oc-violet-9) 90%);
+  border-color: var(--oc-violet-9);
+}
+.card.gradient.indigo {
+  background: radial-gradient(circle, var(--oc-indigo-3) -9%, var(--oc-indigo-9) 90%);
+  border-color: var(--oc-indigo-9);
+}
+.card.gradient.blue {
+  background: radial-gradient(circle, var(--oc-blue-3) -9%, var(--oc-blue-9) 90%);
+  border-color: var(--oc-blue-9);
+}
+.card.gradient.cyan {
+  background: radial-gradient(circle, var(--oc-cyan-3) -9%, var(--oc-cyan-9) 90%);
+  border-color: var(--oc-cyan-9);
+}
+.card.gradient.teal {
+  background: radial-gradient(circle, var(--oc-teal-3) -9%, var(--oc-teal-9) 90%);
+  border-color: var(--oc-teal-9);
+}
+.card.gradient.green {
+  background: radial-gradient(circle, var(--oc-green-3) -9%, var(--oc-green-9) 90%);
+  border-color: var(--oc-green-9);
+}
+.card.gradient.lime {
+  background: radial-gradient(circle, var(--oc-lime-3) -9%, var(--oc-lime-9) 90%);
+  border-color: var(--oc-lime-9);
+}
+.card.gradient.yellow {
+  background: radial-gradient(circle, var(--oc-yellow-3) -9%, var(--oc-yellow-9) 90%);
+  border-color: var(--oc-yellow-9);
+}
+.card.gradient.orange {
+  background: radial-gradient(circle, var(--oc-orange-3) -9%, var(--oc-orange-9) 90%);
+  border-color: var(--oc-orange-9);
+}
+
+/*
+ * 矩阵
+ */
+.card.matrix {
+  align-items: stretch;
+}
+
+.card.matrix,
+.card.matrix > .card {
+  border-radius: 0px;
+  border-color: var(--oc-gray-7) !important;
+  margin: 0px;
+  border: 0px;
+}
+
+/* 由于 matrix 会将内部的卡片的圆角去掉，可以用这个再加回来 */
+.border-radius-xxs {
+  border-radius: 4px !important;
+}
+
+.nord-dark .card.matrix,
+.nord-dark .card.matrix > .card {
+  border-radius: 0px;
+  border-color: var(--nord4) !important;
+  margin: 0px;
+  border: 0px;
+}
+
+.card.matrix.border-top-solid > .card {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.card.matrix.border-top-dashed > .card {
+  border-top-width: 1px;
+  border-top-style: dashed;
+}
+
+.card.matrix.border-bottom-solid > .card {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.card.matrix.border-bottom-dashed > .card {
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+}
+
+.card.matrix.border-left-solid > .card:first-child {
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+.card.matrix.border-left-dashed > .card:first-child {
+  border-left-width: 1px;
+  border-left-style: dashed;
+}
+
+.card.matrix.border-middle-solid > .card:not(:last-child) {
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+
+.card.matrix.border-middle-dashed > .card:not(:last-child) {
+  border-right-width: 1px;
+  border-right-style: dashed;
+}
+
+.card.matrix.border-right-solid > .card:last-child {
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+
+.card.matrix.border-right-dashed > .card:last-child {
+  border-right-width: 1px;
+  border-right-style: dashed;
+}
+
+.card.matrix .border-top-none {
+  border-top-width: 0px !important;
+}
+.card.matrix .border-bottom-none {
+  border-bottom-width: 0px !important;
+}
+.card.matrix .border-left-none {
+  border-left-width: 0px !important;
+}
+.card.matrix .border-right-none {
+  border-right-width: 0px !important;
+}
+
+/* 
+ * 气泡箭头
+ */
+.card.arrow-bottom {
+  position: relative;
+  overflow: visible;
+  margin: 0.4em;
+}
+.card.arrow-bottom:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-width: 1px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  bottom: -6px;
+  border-color: transparent var(--oc-gray-4) var(--oc-gray-4) transparent;
+}
+
+.card.arrow-top {
+  position: relative;
+  overflow: visible;
+  margin: 0.4em;
+}
+.card.arrow-top:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-width: 1px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-135deg);
+  top: -6px;
+  border-color: transparent var(--oc-gray-4) var(--oc-gray-4) transparent;
+}
+
+.card.arrow-left {
+  position: relative;
+  overflow: visible;
+  margin: 0.4em;
+}
+.card.arrow-left:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-width: 1px;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+  left: -6px;
+  border-color: transparent var(--oc-gray-4) var(--oc-gray-4) transparent;
+}
+
+.card.arrow-right {
+  position: relative;
+  overflow: visible;
+  margin: 0.4em;
+}
+.card.arrow-right:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-width: 1px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  right: -6px;
+  border-color: transparent var(--oc-gray-4) var(--oc-gray-4) transparent;
+}
+
+.nord-dark .card.arrow-bottom:after,
+.nord-dark .card.arrow-top:after,
+.nord-dark .card.arrow-left:after,
+.nord-dark .card.arrow-right:after {
+  background-color: var(--nord0);
+}
+
+/* .card.red.arrow-bottom:after,
+.card.red.arrow-top:after,
+.card.red.arrow-left:after,
+.card.red.arrow-right:after {
+  border-color: transparent var(--oc-red-7) var(--oc-red-7) transparent;
+  background-color: var(--oc-red-3);
+} */
+
+.card.gray.arrow-bottom:after,
+.card.gray.arrow-top:after,
+.card.gray.arrow-left:after,
+.card.gray.arrow-right:after {
+  border-color: transparent var(--oc-gray-7) var(--oc-gray-7) transparent;
+  background-color: var(--oc-gray-3);
+}
+.card.red.arrow-bottom:after,
+.card.red.arrow-top:after,
+.card.red.arrow-left:after,
+.card.red.arrow-right:after {
+  border-color: transparent var(--oc-red-7) var(--oc-red-7) transparent;
+  background-color: var(--oc-red-3);
+}
+.card.pink.arrow-bottom:after,
+.card.pink.arrow-top:after,
+.card.pink.arrow-left:after,
+.card.pink.arrow-right:after {
+  border-color: transparent var(--oc-pink-7) var(--oc-pink-7) transparent;
+  background-color: var(--oc-pink-3);
+}
+.card.grape.arrow-bottom:after,
+.card.grape.arrow-top:after,
+.card.grape.arrow-left:after,
+.card.grape.arrow-right:after {
+  border-color: transparent var(--oc-grape-7) var(--oc-grape-7) transparent;
+  background-color: var(--oc-grape-3);
+}
+.card.violet.arrow-bottom:after,
+.card.violet.arrow-top:after,
+.card.violet.arrow-left:after,
+.card.violet.arrow-right:after {
+  border-color: transparent var(--oc-violet-7) var(--oc-violet-7) transparent;
+  background-color: var(--oc-violet-3);
+}
+.card.indigo.arrow-bottom:after,
+.card.indigo.arrow-top:after,
+.card.indigo.arrow-left:after,
+.card.indigo.arrow-right:after {
+  border-color: transparent var(--oc-indigo-7) var(--oc-indigo-7) transparent;
+  background-color: var(--oc-indigo-3);
+}
+.card.blue.arrow-bottom:after,
+.card.blue.arrow-top:after,
+.card.blue.arrow-left:after,
+.card.blue.arrow-right:after {
+  border-color: transparent var(--oc-blue-7) var(--oc-blue-7) transparent;
+  background-color: var(--oc-blue-3);
+}
+.card.cyan.arrow-bottom:after,
+.card.cyan.arrow-top:after,
+.card.cyan.arrow-left:after,
+.card.cyan.arrow-right:after {
+  border-color: transparent var(--oc-cyan-7) var(--oc-cyan-7) transparent;
+  background-color: var(--oc-cyan-3);
+}
+.card.teal.arrow-bottom:after,
+.card.teal.arrow-top:after,
+.card.teal.arrow-left:after,
+.card.teal.arrow-right:after {
+  border-color: transparent var(--oc-teal-7) var(--oc-teal-7) transparent;
+  background-color: var(--oc-teal-3);
+}
+.card.green.arrow-bottom:after,
+.card.green.arrow-top:after,
+.card.green.arrow-left:after,
+.card.green.arrow-right:after {
+  border-color: transparent var(--oc-green-7) var(--oc-green-7) transparent;
+  background-color: var(--oc-green-3);
+}
+.card.lime.arrow-bottom:after,
+.card.lime.arrow-top:after,
+.card.lime.arrow-left:after,
+.card.lime.arrow-right:after {
+  border-color: transparent var(--oc-lime-7) var(--oc-lime-7) transparent;
+  background-color: var(--oc-lime-3);
+}
+.card.yellow.arrow-bottom:after,
+.card.yellow.arrow-top:after,
+.card.yellow.arrow-left:after,
+.card.yellow.arrow-right:after {
+  border-color: transparent var(--oc-yellow-7) var(--oc-yellow-7) transparent;
+  background-color: var(--oc-yellow-3);
+}
+.card.orange.arrow-bottom:after,
+.card.orange.arrow-top:after,
+.card.orange.arrow-left:after,
+.card.orange.arrow-right:after {
+  border-color: transparent var(--oc-orange-7) var(--oc-orange-7) transparent;
+  background-color: var(--oc-orange-3);
+}
+
+.card.dark.gray.arrow-bottom:after,
+.card.dark.gray.arrow-top:after,
+.card.dark.gray.arrow-left:after,
+.card.dark.gray.arrow-right:after {
+  background-color: var(--oc-gray-6);
+  border-color: transparent var(--oc-gray-9) var(--oc-gray-9) transparent;
+}
+.card.dark.red.arrow-bottom:after,
+.card.dark.red.arrow-top:after,
+.card.dark.red.arrow-left:after,
+.card.dark.red.arrow-right:after {
+  background-color: var(--oc-red-6);
+  border-color: transparent var(--oc-red-9) var(--oc-red-9) transparent;
+}
+.card.dark.pink.arrow-bottom:after,
+.card.dark.pink.arrow-top:after,
+.card.dark.pink.arrow-left:after,
+.card.dark.pink.arrow-right:after {
+  background-color: var(--oc-pink-6);
+  border-color: transparent var(--oc-pink-9) var(--oc-pink-9) transparent;
+}
+.card.dark.grape.arrow-bottom:after,
+.card.dark.grape.arrow-top:after,
+.card.dark.grape.arrow-left:after,
+.card.dark.grape.arrow-right:after {
+  background-color: var(--oc-grape-6);
+  border-color: transparent var(--oc-grape-9) var(--oc-grape-9) transparent;
+}
+.card.dark.violet.arrow-bottom:after,
+.card.dark.violet.arrow-top:after,
+.card.dark.violet.arrow-left:after,
+.card.dark.violet.arrow-right:after {
+  background-color: var(--oc-violet-6);
+  border-color: transparent var(--oc-violet-9) var(--oc-violet-9) transparent;
+}
+.card.dark.indigo.arrow-bottom:after,
+.card.dark.indigo.arrow-top:after,
+.card.dark.indigo.arrow-left:after,
+.card.dark.indigo.arrow-right:after {
+  background-color: var(--oc-indigo-6);
+  border-color: transparent var(--oc-indigo-9) var(--oc-indigo-9) transparent;
+}
+.card.dark.blue.arrow-bottom:after,
+.card.dark.blue.arrow-top:after,
+.card.dark.blue.arrow-left:after,
+.card.dark.blue.arrow-right:after {
+  background-color: var(--oc-blue-6);
+  border-color: transparent var(--oc-blue-9) var(--oc-blue-9) transparent;
+}
+.card.dark.cyan.arrow-bottom:after,
+.card.dark.cyan.arrow-top:after,
+.card.dark.cyan.arrow-left:after,
+.card.dark.cyan.arrow-right:after {
+  background-color: var(--oc-cyan-6);
+  border-color: transparent var(--oc-cyan-9) var(--oc-cyan-9) transparent;
+}
+.card.dark.teal.arrow-bottom:after,
+.card.dark.teal.arrow-top:after,
+.card.dark.teal.arrow-left:after,
+.card.dark.teal.arrow-right:after {
+  background-color: var(--oc-teal-6);
+  border-color: transparent var(--oc-teal-9) var(--oc-teal-9) transparent;
+}
+.card.dark.green.arrow-bottom:after,
+.card.dark.green.arrow-top:after,
+.card.dark.green.arrow-left:after,
+.card.dark.green.arrow-right:after {
+  background-color: var(--oc-green-6);
+  border-color: transparent var(--oc-green-9) var(--oc-green-9) transparent;
+}
+.card.dark.lime.arrow-bottom:after,
+.card.dark.lime.arrow-top:after,
+.card.dark.lime.arrow-left:after,
+.card.dark.lime.arrow-right:after {
+  background-color: var(--oc-lime-6);
+  border-color: transparent var(--oc-lime-9) var(--oc-lime-9) transparent;
+}
+.card.dark.yellow.arrow-bottom:after,
+.card.dark.yellow.arrow-top:after,
+.card.dark.yellow.arrow-left:after,
+.card.dark.yellow.arrow-right:after {
+  background-color: var(--oc-yellow-6);
+  border-color: transparent var(--oc-yellow-9) var(--oc-yellow-9) transparent;
+}
+.card.dark.orange.arrow-bottom:after,
+.card.dark.orange.arrow-top:after,
+.card.dark.orange.arrow-left:after,
+.card.dark.orange.arrow-right:after {
+  background-color: var(--oc-orange-6);
+  border-color: transparent var(--oc-orange-9) var(--oc-orange-9) transparent;
+}
+
+.card.noborder.arrow-bottom:after,
+.card.noborder.arrow-top:after,
+.card.noborder.arrow-left:after,
+.card.noborder.arrow-right:after,
+.card.dark.noborder.arrow-bottom:after,
+.card.dark.noborder.arrow-top:after,
+.card.dark.noborder.arrow-left:after,
+.card.dark.noborder.arrow-right:after {
+  border-color: transparent;
+}
+
+/* 相框效果 */
+.card.frame {
+  border-radius: 0px;
+  border: 7px solid white;
+  box-shadow: 0px 0px 2px 0px #aaa;
+  margin: 0.5em;
+  display: inline-flex;
+}
+
+/* 
+ * 点击预览 
+ */
+/* 点击卡片后打开新浏览器窗口预览 */
+.card.preview-win {
+  cursor: pointer;
+}

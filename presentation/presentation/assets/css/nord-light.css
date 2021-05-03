@@ -1,0 +1,154 @@
+/*
+* Nord 亮色主题样式
+*/
+@import "./nord.css";
+
+.nord-light {
+  background-color: white;
+}
+
+.nord-light h1,
+.nord-light h2,
+.nord-light h3,
+.nord-light h4,
+.nord-light h5,
+.nord-light h6,
+.nord-light p,
+.nord-light span,
+.nord-light li {
+  color: var(--nord3);
+}
+
+/* 文字下方显示横线 */
+.nord-light .under-line {
+  position: relative;
+}
+
+.nord-light .under-line::after {
+  position: absolute;
+  top: 1.65em;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  content: " ";
+  border-top: 1px solid var(--nord3);
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+.nord-light small {
+  color: var(--nord3);
+  opacity: 0.6;
+}
+
+.nord-light a {
+  color: var(--nord10);
+  border-radius: 0.25em;
+  transition: color 200ms ease-in-out 0s, background-color 200ms ease-in-out 0s;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  border-bottom-color: transparent;
+}
+
+.nord-light a:hover {
+  color: var(--nord10);
+  /* background-color: var(--nord3); */
+  background-color: rgba(236, 239, 244, 0.45);
+  border-bottom-color: transparent;
+}
+
+.nord-light pre {
+  background: transparent;
+  padding: 0px;
+  border: 0px;
+}
+
+.nord-light code {
+  color: var(--nord3);
+  background-color: var(--nord6);
+  padding: 0.2em 0.4em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  transition: background-color 400ms ease-in-out 0s;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+.nord-light .remark-inline-code {
+  color: var(--nord3);
+  background-color: var(--nord6);
+  padding: 0.2em 0.4em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  transition: background-color 400ms ease-in-out 0s;
+  font: 300 0.92em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif,
+    WenQuanYi Micro Hei, sans;
+}
+
+.nord-light .remark-code,
+.nord-light .hljs-keyword {
+  background-color: var(--nord6);
+  color: var(--nord3);
+}
+
+.nord-light blockquote {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+  padding-left: 1.5em;
+  color: rgb(123, 136, 161);
+  border-left: 0.2em solid rgba(94, 129, 172, 0.6);
+  margin: 1em 0px;
+  transition: border-left 400ms ease-in-out 0s, color 400ms ease-in-out 0s;
+}
+
+.nord-light blockquote > p {
+  color: rgb(123, 136, 161);
+  opacity: 0.65;
+}
+
+.nord-light ol,
+.nord-light li ol {
+  margin-left: 0em;
+}
+
+.nord-light ul,
+.nord-light ol ul,
+.nord-light ul li ul {
+  list-style-type: none;
+  margin: 0px 0px 1em;
+  padding: 0px 0px 0px 1em;
+}
+
+.nord-light ul > li {
+  position: relative;
+  margin-left: 0.3em;
+  margin-bottom: 0.7em;
+  margin-top: 0.7em;
+}
+
+.nord-light ul > li::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 0.7em;
+  left: -20px;
+  background-color: var(--nord3);
+  border-radius: 50%;
+  transition: background-color 400ms ease-in-out 0s;
+}
+
+.nord-light ol {
+  margin: 0px 0px 1em;
+  padding: 0px 0px 0px 1em;
+}
+
+.nord-light ol > li {
+  padding-left: 0.3em;
+}

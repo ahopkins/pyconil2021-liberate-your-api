@@ -1,0 +1,210 @@
+@import "./open-color.css";
+
+/*
+ * 圆形文本框
+*/
+.circle {
+  line-height: 1em;
+  border-width: 1px;
+  margin: 0.3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+}
+.circle,
+.circle.gray,
+.circle.red,
+.circle.pink,
+.circle.grape,
+.circle.violet,
+.circle.indigo,
+.circle.blue,
+.circle.cyan,
+.circle.teal,
+.circle.green,
+.circle.lime,
+.circle.yellow,
+.circle.orange,
+.circle h1,
+.circle h2,
+.circle h3,
+.circle h4,
+.circle h5,
+.circle h6,
+.circle p,
+.circle span,
+.circle strong {
+  color: #333;
+}
+/* 实现宽高比 1:1 */
+.circle:before {
+  content: "";
+  padding-top: 100%;
+}
+
+.circle p {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+.circle.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.circle.dash-border {
+  border-width: 1px;
+  border-style: dashed;
+}
+
+.circle.gray {
+  border-color: var(--oc-gray-7);
+  background-color: var(--oc-gray-3);
+}
+.circle.red {
+  border-color: var(--oc-red-7);
+  background-color: var(--oc-red-3);
+}
+.circle.pink {
+  border-color: var(--oc-pink-7);
+  background-color: var(--oc-pink-3);
+}
+.circle.grape {
+  border-color: var(--oc-grape-7);
+  background-color: var(--oc-grape-3);
+}
+.circle.violet {
+  border-color: var(--oc-violet-7);
+  background-color: var(--oc-violet-3);
+}
+.circle.indigo {
+  border-color: var(--oc-indigo-7);
+  background-color: var(--oc-indigo-3);
+}
+.circle.blue {
+  border-color: var(--oc-blue-7);
+  background-color: var(--oc-blue-3);
+}
+.circle.cyan {
+  border-color: var(--oc-cyan-7);
+  background-color: var(--oc-cyan-3);
+}
+.circle.teal {
+  border-color: var(--oc-teal-7);
+  background-color: var(--oc-teal-3);
+}
+.circle.green {
+  border-color: var(--oc-green-7);
+  background-color: var(--oc-green-3);
+}
+.circle.lime {
+  border-color: var(--oc-lime-7);
+  background-color: var(--oc-lime-3);
+}
+.circle.yellow {
+  border-color: var(--oc-yellow-7);
+  background-color: var(--oc-yellow-3);
+}
+.circle.orange {
+  border-color: var(--oc-orange-7);
+  background-color: var(--oc-orange-3);
+}
+
+.circle.dark.gray {
+  background-color: var(--oc-gray-6);
+  border-color: var(--oc-gray-9);
+}
+.circle.dark.red {
+  background-color: var(--oc-red-6);
+  border-color: var(--oc-red-9);
+}
+.circle.dark.pink {
+  background-color: var(--oc-pink-6);
+  border-color: var(--oc-pink-9);
+}
+.circle.dark.grape {
+  background-color: var(--oc-grape-6);
+  border-color: var(--oc-grape-9);
+}
+.circle.dark.violet {
+  background-color: var(--oc-violet-6);
+  border-color: var(--oc-violet-9);
+}
+.circle.dark.indigo {
+  background-color: var(--oc-indigo-6);
+  border-color: var(--oc-indigo-9);
+}
+.circle.dark.blue {
+  background-color: var(--oc-blue-6);
+  border-color: var(--oc-blue-9);
+}
+.circle.dark.cyan {
+  background-color: var(--oc-cyan-6);
+  border-color: var(--oc-cyan-9);
+}
+.circle.dark.teal {
+  background-color: var(--oc-teal-6);
+  border-color: var(--oc-teal-9);
+}
+.circle.dark.green {
+  background-color: var(--oc-green-6);
+  border-color: var(--oc-green-9);
+}
+.circle.dark.lime {
+  background-color: var(--oc-lime-6);
+  border-color: var(--oc-lime-9);
+}
+.circle.dark.yellow {
+  background-color: var(--oc-yellow-6);
+  border-color: var(--oc-yellow-9);
+}
+.circle.dark.orange {
+  background-color: var(--oc-orange-6);
+  border-color: var(--oc-orange-9);
+}
+
+.circle.black,
+.circle.black h1,
+.circle.black h2,
+.circle.black h3,
+.circle.black h4,
+.circle.black h5,
+.circle.black h6,
+.circle.black p,
+.circle.black span,
+.circle.black strong,
+.circle.black i {
+  color: var(--oc-gray-1);
+  background-color: #000;
+  border-color: #000;
+}
+
+.circle.white,
+.circle.white h1,
+.circle.white h2,
+.circle.white h3,
+.circle.white h4,
+.circle.white h5,
+.circle.white h6,
+.circle.white p,
+.circle.white span,
+.circle.white strong,
+.circle.white i {
+  color: var(--oc-gray-9) !important;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.circle.transbg,
+.circle.dark.transbg {
+  background-color: transparent;
+}

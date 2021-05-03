@@ -1,0 +1,54 @@
+.mermaid {
+  background: rgba(200, 200, 200, 0.7);
+}
+
+.mermaid .edgeLabel {
+  display: block;
+  color: #222;
+  background: transparent !important;
+  position: relative;
+  bottom: 0.15em;
+}
+
+.mermaid .label div {
+  font-size: 0.8em;
+}
+
+h1 small {
+  font-size: 0.5em;
+}
+
+h1 em {
+  color: #fff !important;
+  opacity: 0.5;
+}
+
+em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.typo table thead th {
+  background: rgba(200, 200, 200, 0.7);
+}
+
+.typo table tbody td {
+  background: rgba(200, 200, 200, 0.15);
+  color: #fff;
+}
+
+.strike {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.overflow-wrap {
+  overflow-wrap: break-word;
+}
+.remark-code-line-highlighted {
+  background-color: #ff03;
+}
+
+.remark-code-line-highlighted .hljs-keyword {
+  background-color: rgba(59, 66, 82, 0.36);
+}
